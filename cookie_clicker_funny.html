@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Clicker</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .cookie {
+            width: 200px;
+            cursor: pointer;
+        }
+        #counter {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+        .button {
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        #funnyMessage {
+            display: none;
+            color: red;
+            font-size: 24px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cookie Clicker</h1>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Chocolate_Chip_Cookie_%28cropped%29.jpg" alt="Cookie" class="cookie" onclick="clickCookie()">
+    <div id="counter">Cookies: 0</div>
+    <button class="button" onclick="resetGame()">Reset</button>
+    <div id="funnyMessage">FUNNY</div>
+
+    <script>
+        let cookies = 0;
+        function clickCookie() {
+            cookies++;
+            document.getElementById('counter').innerText = "Cookies: " + cookies;
+            if (cookies >= 50) {
+                document.getElementById('funnyMessage').style.display = "block";
+            }
+        }
+        function resetGame() {
+            cookies = 0;
+            document.getElementById('counter').innerText = "Cookies: " + cookies;
+            document.getElementById('funnyMessage').style.display = "none";
+        }
+    </script>
+</body>
+</html>
